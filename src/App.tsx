@@ -11,7 +11,7 @@ function App() {
     mermaid.mermaidAPI.initialize({
       startOnLoad: true,
       securityLevel: "loose",
-      theme: "forest",
+      theme: "default",
       logLevel: 5
     });
   }, []);
@@ -32,15 +32,17 @@ function App() {
     const formData = new FormData(event.target as HTMLFormElement);
     const data = formData.get('inputMermaid');
     console.log("data", data)
-    drawMermaid(data as string);
+    if(data!== ""){
+      drawMermaid(data as string);
+    }
   }
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
+        <h1>Regex Visualizer</h1>
         <textarea name="inputMermaid" id="" cols={30} rows={10}></textarea>
         <button type='submit'>Enviar</button>
       </form>
-      <h1>React Mermaid Example</h1>
       <div ref={ref} key="preview">
       </div>
     </div>

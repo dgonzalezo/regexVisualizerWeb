@@ -85,9 +85,11 @@ export class MyRegexVisitor implements regexParserVisitor<any>{
     }
 
 }
-
+/* eslint-disable */
 import regexParserVisitor from "./regexParserVisitor";
+/* eslint-disable */
 import {ErrorNode, ParseTree, RuleNode} from "antlr4/";
+/* eslint-disable */
 import {TerminalNode} from "antlr4";
 
 
